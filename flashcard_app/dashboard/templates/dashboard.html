@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flashspark | Dashboard</title>
+        <link rel="stylesheet" href="{% static 'css/dashboard/dashboard.css' %}">
+    </head>
+    <body>
+        <form class="signout-button" method="POST" action="."> {% csrf_token %}
+            <input class='button' type="submit" id="sign-out" value="Signout"></input>
+        </form>
+        <div class="deck">
+            <h2 class="title">Decks</h2>
+            <h2 class="due-count">Due</h2>
+            <h2 class="new-count">New</h2>
+            <h2 class="actions">Actions</h2>
+            <div class="deck-container">
+
+            </div>
+        </div>
+        <div class="deck-control">
+            <button class="button deck-button" id="create-deck">Create Deck</button>
+            <button class="button deck-button" id="add-cards">Add Cards</button>
+            <button class="button deck-button" id="start-quiz">Start Quiz</button>
+        </div>
+        <form class="form" id="create-form">
+            <label for="deck-name" class="deck-input input-title">Deck Name</label>
+            <input class="deck-input" id="deck-name">
+            <input class="button submit-button" type="submit" value="Submit">
+        </form>
+        <form class="form" id="edit-form">
+            <label for="name-change" class="deck-input input-title">Change Name</label>
+            <input class="deck-input" id="name-change">
+            <input class="button submit-button" type="submit" value="Submit">
+        </form>
+        <p class="select add-select">Click the name of the deck you want to add cards to.</p>
+        <p class="select quiz-select">Click the name of the deck you want to review.</p>
+        <script type="text/javascript" src="{% static 'js/dashboard/dashboard.js' %}"></script>
+        <script>
+            const csrfToken = '{{ csrf_token }}';
+        </script>
+    </body>
+</html>

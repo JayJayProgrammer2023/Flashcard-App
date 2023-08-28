@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flashspark | Flashcards</title>
+        <link rel="stylesheet" href="{% static 'css/signin.css' %}">
+    </head>
+    <body>
+        <div class="title">
+            <h2>Flashspark</h2>
+            <h4>Flashcards built for you</h4>
+        </div>
+        {% for message in messages %}
+            <div class="alert alert-success">
+                <p class="message">×{{ message }} </p>
+            </div> 
+        {% endfor %}
+        <div class="form-container">
+            <form method="POST" action="."> {% csrf_token %}
+                <h4>Sign In</h4>
+                <div class="input-container">
+                    <br><input class="input" name="username" type="text"  placeholder="Username or E-mail" autocomplete="off"><br>
+                    <br><input class="input" name="password" type="password"  placeholder="Password" autocomplete="off"><br>
+                </div>
+                <div class="send-container">
+                    <input class='send' type="submit" value="Login">
+                </div>
+            </form>
+            <div class="register">
+                <div class="register-content">
+                    <p class="register-text">Want to create a new account?<a  class="register-text" id="sign-up" href="{% url 'register' %}">Sign Up</a></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

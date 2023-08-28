@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Asul', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html,body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    font-size: 8px;
+    background-color: #e1f1fd;
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    flex-direction: column;
+}
+
+.signout-button {
+    margin: 2.5% 2.5% 0;
+    align-self: first baseline;
+}
+
+#sign-out {
+    font-size: 2rem;
+    background-color: lightgray;
+    padding: 0.5rem 2rem;
+}
+
+.deck {
+    margin-top: 2.5%;
+    width: 60%;
+    height: 60%;
+    display: grid;
+    grid-template-columns: 60% 10% 10% 20%;
+    grid-template-rows: 10% 90%;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+.title {
+    grid-column: 1;
+}
+
+.due-count {
+    grid-column: 2;
+}
+
+.new-count {
+    grid-column: 3;
+}
+
+.actions {
+    grid-column: 4;
+}
+
+.actions {
+    text-align: center;
+}
+
+.deck-container {
+    width: 100%;
+    min-height: 10%;
+    height: auto;
+    border: solid 1px lightgrey;
+    grid-column: 1/5;
+}
+
+.deck-filler {
+    background-color:gray;
+    border: solid 1px rgb(110, 109, 109);
+    height: 7.5%;
+    width: auto;
+    display: grid;
+    grid-template-columns: 60% 10% 10% 10% 10%;
+    grid-template-rows: 100%;
+}
+
+.deck-name {
+    grid-column: 1;
+}
+
+.deck-due {
+    grid-column: 2;
+}
+
+.deck-new {
+    grid-column: 3;
+}
+
+.edit {
+    grid-column: 4;
+    background-color: yellow;
+    color: black;
+}
+
+.delete {
+    grid-column: 5;
+    background-color: red;
+    color: white;
+}
+
+.edit, .delete {
+    justify-self: center;
+    align-self: center;
+}
+
+.deck-name, .deck-due, .deck-new, .edit, .delete {
+    grid-row: 1;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    margin-left: 0.5rem;
+}
+
+.deck-control {
+    display: flex;
+    justify-content: space-between;
+    width: 15%;
+    margin: 1% 0;
+}
+
+#create-deck, #add-cards, #start-quiz {
+    display: inline-block;
+    white-space: nowrap;
+    border: solid 1px;
+    margin: 0 2% 0 0;
+}
+
+.button {
+    text-decoration: none;
+    text-align: center;
+    padding: 0 5%;
+    border: none;
+    border-radius: 0.5rem;
+    display: inline-block;
+}
+
+.form {
+    display: none;
+    margin: 1% 0;
+}
+
+.deck-input {
+    font-size: 1.5rem;
+}
+
+#deck-name, #name-change {
+    margin-left: 2rem;
+    padding: 2%;
+}
+
+.submit-button {
+    margin-left: 5%;
+    background-color: rgb(41, 168, 94);
+    color: white;
+}
+
+.select {
+    font-size: 2rem;
+    display: none;
+}

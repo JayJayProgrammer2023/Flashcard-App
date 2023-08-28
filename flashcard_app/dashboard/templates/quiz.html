@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flashspark | Quiz</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard/quiz.css' %}">
+    </head>
+    <body>
+        <div class="quiz">
+            <header class="header">
+                <a href="{% url 'dashboard:dashboard' %}" class="button home-button" id="dashboard">Home</a>
+                <div class="counter-container">
+                    <div class="counter-content">
+                        <p class="counter">&#x2713;</p>
+                        <p class="counter" id="done-count">0</p>
+                    </div>
+                    <div class="counter-content">
+                        <p class="counter">R</p>
+                        <p class="counter" id="remaining-count">0</p>
+                    </div>
+                </div>
+            </header>
+            <div class="quiz-section">
+                <div class="quiz-card">
+                    <div class="term-container">
+                        <div id="data-script" style="display: none;">{{ data|json_script }}</div>
+                        <p id="term"></p>
+                    </div>
+                </div>
+                <form class="answer-container" id="answer-container" name="answer"> {% csrf_token %}
+                    <input class="answer input" id="answer" placeholder="Answer" type="text" autocomplete="off"/>
+                    <button class="answer submit-button" id="submit-button" type="submit">></button>
+                </form>
+            </div>
+        </div>
+        <div class="signout-button">
+            <a class='button' href="{% url 'dashboard:dashboard' %}" id="dashboard">Back to Dashboard</a>
+        </div>
+        <div class="results">
+            <div class="list correct-container">
+                <p class="title correct-title">Correct</p>
+                <div class="deck-list correct">
+
+                </div>
+            </div>
+            <div class="list incorrect-container">
+                <p class="title incorrect-title">Incorrect</p>
+                <div class="deck-list incorrect">
+
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="{% static 'js/dashboard/quiz.js' %}"></script>
+    </body>
+</html>

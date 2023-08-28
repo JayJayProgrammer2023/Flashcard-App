@@ -1,0 +1,175 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Asul', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html,body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    font-size: 8px;
+    background-color: #e1f1fd;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2.5rem;
+    padding: 2rem 4rem;
+}
+
+.home-button {
+    text-decoration: none;
+    color: black;
+}
+
+.counter-container, .counter-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.counter-container {
+    width: 8%;
+}
+
+.counter {
+    margin-right: 50%;
+}
+
+.quiz-card {
+    border: solid 1px;
+    height: 40rem;
+    width: 80rem;
+    padding: 2%;
+    box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 1px 0px;
+    background-color: white;
+    margin: 2% 5% 1% 5%;
+    opacity: 1;
+    font-weight: 300;
+}
+
+.term-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.quiz-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.answer-container {
+    width: 60%;
+    margin-top: 3%;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.answer {
+    font-size: 3rem;
+    padding: 1%;
+}
+
+.input {
+    width: 85%;
+    text-align: center;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.results {
+    margin: 5%;
+    height: 75%;
+    width: 80%;
+    display: none;
+    justify-content: center;
+}
+
+.signout-button {
+    margin: 2.5% 2.5% 0;
+    align-self: first baseline;
+    display: none;
+}
+
+#dashboard {
+    font-size: 2rem;
+    background-color: lightgray;
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    color: black;
+    border-radius: 2rem;
+}
+
+.list {
+    width: 20%;
+    height: 100%;
+    margin-right: 5%;
+}
+
+.list > * {
+    margin-top: 5%;
+}
+
+.title {
+    height: 5%;
+    font-size: 2.5rem;
+    border: solid 1px grey;
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.correct-title {
+    background-color: lightgreen;
+}
+
+.incorrect-title {
+    background-color: red;
+}
+
+.deck-list {
+    height: 90%; 
+    border: solid;
+    overflow-y: scroll;
+}
+
+.card {
+    width: 100%;
+    height: 25%;
+    border: solid 1px;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 100%;
+    background-color: white;
+}
+
+.card-content {
+    grid-column: 2;
+    align-self: center;
+    justify-self: center;
+}
+
+.back {
+    display: none;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.flip {
+    grid-column: 1;
+    grid-row: 1;
+    height: 25%;
+    align-self: end;
+}

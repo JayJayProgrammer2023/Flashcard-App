@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flashspark | Add Cards</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard/add_cards.css' %}">
+    </head>
+    <body>
+        <form class="signout-button"> {% csrf_token %}
+            <a class='button' href="{% url 'dashboard:dashboard' %}" id="dashboard">Back to Dashboard</a>
+        </form>
+        <div class="full-page">
+            <div class="deck-info">
+                <p class="text deck-title">{{ deck_obj.DeckName }}</p>
+                <div class="deck-list">
+                    {% for card in cards_done %}
+                    <div class="card">
+                        <button class="flip">Flip</button>
+                        <p class="card-content front">{{ card.CardFront }}</p>
+                        <p class="card-content back">{{ card.CardBack }}</p>
+                        <button class="delete">Delete</button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="card-entry">
+                <form class="card-info">
+                    <label for="front-info" class="info-title text">Front</label>
+                    <input class="info" id="front-info" type="text" autocomplete="off"></input>
+                    <label for="back-info" class="info-title text">Back</label>
+                    <input class="info" id="back-info" type="text" autocomplete="off"></input>
+                    <input class="button submit-button" type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript" src="{% static 'js/dashboard/add_cards.js' %}"></script>
+        <script>
+            const csrfToken = '{{ csrf_token }}';
+            const apiUrl = "{% url 'dashboard:send_cards' %}"
+        </script>
+    </body>
+</html>
